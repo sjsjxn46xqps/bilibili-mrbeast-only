@@ -93,14 +93,11 @@ bilibili-mrbeast-only/
 ├─ docs/                  # 预览图
 ├─ README.md
 ├─ PRIVACY.md
-├─ LICENSE
-└─ PUBLISH.md
+└─ LICENSE
 ```
 
 ## 许可证
 
 本扩展代码采用 MIT，见 [LICENSE](LICENSE)。视频、封面和内容版权归哔哩哔哩及对应 UP 主所有；仓库不包含任何 B 站视频文件。
 
-## 发布
 
-GitHub 建仓、推送、打 Release 的步骤见 [PUBLISH.md](PUBLISH.md)。
