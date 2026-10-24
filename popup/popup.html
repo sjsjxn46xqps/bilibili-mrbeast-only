@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B站只看野兽先生</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="popup">
+    <header class="brand">
+      <img class="brand__icon" src="../icons/icon48.png" alt="" width="42" height="42">
+      <div class="brand__copy">
+        <p class="brand__kicker">MRBEAST ONLY</p>
+        <h1>只看野兽先生</h1>
+      </div>
+      <span class="brand__status" id="statusDot" aria-hidden="true"></span>
+    </header>
+
+    <section class="toggle-card">
+      <div class="toggle-card__copy">
+        <h2>专属首页</h2>
+        <p>隐藏 B 站首页其他推荐，只留下 MrBeast 官方与搬运内容。</p>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="enabled" checked>
+        <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+        <span class="sr-only">启用专属首页</span>
+      </label>
+    </section>
+
+    <section class="toggle-card toggle-card--secondary">
+      <div class="toggle-card__copy">
+        <h2>全部包含二创</h2>
+        <p>把 AI、解说、模仿、低播放等所有相关内容放进“全部”，并排在最底部。</p>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="includeSecondary">
+        <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+        <span class="sr-only">在全部中包含二创内容</span>
+      </label>
+    </section>
+
+    <section class="toggle-card toggle-card--secondary toggle-card--sub" id="secondaryAllRow">
+      <div class="toggle-card__copy">
+        <h2>全量关键词</h2>
+        <p>开启后，所有含“野兽先生/MrBeast”且 ≥500 播放的非官方视频都放到底部；关闭则只放二创类别。</p>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="includeAllKeyword">
+        <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+        <span class="sr-only">放出全部关键词视频</span>
+      </label>
+    </section>
+
+    <p class="status-line" id="statusText">正在读取状态…</p>
+
+    <div class="actions">
+      <button class="action action--primary" id="refresh" type="button">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 11a8 8 0 1 0-2.34 5.66"></path>
+          <path d="M20 4v7h-7"></path>
+        </svg>
+        刷新视频
+      </button>
+      <a class="action" id="openHome" href="https://www.bilibili.com/" target="_blank" rel="noopener noreferrer">
+        打开 B 站首页
+      </a>
+    </div>
+
+    <section class="links">
+      <a href="https://space.bilibili.com/1027737427" target="_blank" rel="noopener noreferrer">
+        <span>
+          <strong>野兽先生MrBeast</strong>
+          <small>官方主频道</small>
+        </span>
+        <span class="links__arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="https://space.bilibili.com/3707039702321329" target="_blank" rel="noopener noreferrer">
+        <span>
+          <strong>野兽游戏MrBeast</strong>
+          <small>Beast Games</small>
+        </span>
+        <span class="links__arrow" aria-hidden="true">↗</span>
+      </a>
+    </section>
+
+    <p class="ai-note">AI 辅助制作，可能存在瑕疵。</p>
+
+    <footer class="foot">
+      <span>接管首页与搜索，不影响播放页</span>
+      <span class="foot__version">v1.4.1</span>
+    </footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

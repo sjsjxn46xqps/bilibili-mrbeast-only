@@ -1,0 +1,343 @@
+:root {
+  color-scheme: light;
+  --ink: #1c1518;
+  --soft: #72676d;
+  --pink: #fb7299;
+  --pink-deep: #dc4d79;
+  --line: rgba(28, 21, 24, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 348px;
+  min-width: 348px;
+  margin: 0;
+}
+
+body {
+  background:
+    radial-gradient(280px 160px at 100% -30px, rgba(251, 114, 153, 0.16), transparent 70%),
+    #fbf7f9;
+  color: var(--ink);
+  font-family: "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.popup {
+  padding: 16px;
+}
+
+/* Header ------------------------------------------------------------------ */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.brand__icon {
+  flex: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px -8px rgba(28, 21, 24, 0.5);
+}
+
+.brand__copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.brand__kicker {
+  margin: 0 0 1px;
+  color: var(--pink-deep);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.brand__status {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 50%;
+  background: #c7bcc2;
+  box-shadow: 0 0 0 4px rgba(199, 188, 194, 0.2);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brand__status.is-on {
+  background: #27c98b;
+  box-shadow: 0 0 0 4px rgba(39, 201, 139, 0.14);
+}
+
+.brand__status.is-off {
+  background: #b7adb3;
+  box-shadow: 0 0 0 4px rgba(183, 173, 179, 0.16);
+}
+
+.brand__status.is-warn {
+  background: #f0a43a;
+  box-shadow: 0 0 0 4px rgba(240, 164, 58, 0.16);
+}
+
+/* Toggle ------------------------------------------------------------------ */
+
+.toggle-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 24px -20px rgba(45, 20, 31, 0.6);
+  padding: 12px;
+}
+
+.toggle-card__copy h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.toggle-card__copy p {
+  margin: 3px 0 0;
+  color: var(--soft);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.toggle-card--secondary {
+  margin-top: 9px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.toggle-card--sub {
+  margin-left: 12px;
+  border-left: 3px solid rgba(251, 114, 153, 0.35);
+  border-radius: 4px 14px 14px 4px;
+}
+
+.toggle-card--sub.is-disabled {
+  opacity: 0.48;
+}
+
+.switch {
+  position: relative;
+  display: block;
+  flex: none;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.switch input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.switch__track {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 23px;
+  border-radius: 999px;
+  background: #ddd3d8;
+  transition: background 0.2s ease;
+}
+
+.switch__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(31, 14, 22, 0.24);
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.switch input:checked + .switch__track {
+  background: linear-gradient(135deg, #ff8aac, #fb7299);
+}
+
+.switch input:checked + .switch__track .switch__thumb {
+  transform: translateX(17px);
+}
+
+.switch input:focus-visible + .switch__track {
+  outline: 2px solid var(--pink-deep);
+  outline-offset: 2px;
+}
+
+/* Status / actions --------------------------------------------------------- */
+
+.status-line {
+  min-height: 17px;
+  margin: 6px 3px 0;
+  color: #8f838a;
+  font-size: 10.5px;
+}
+
+.status-line.is-warn {
+  color: #b15a73;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 8px;
+  margin-top: 11px;
+}
+
+.action {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.75);
+  color: #4e4449;
+  font-size: 11px;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.16s ease, background 0.16s ease, transform 0.16s ease;
+}
+
+.action:hover {
+  border-color: rgba(251, 114, 153, 0.34);
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.action--primary {
+  border-color: transparent;
+  background: linear-gradient(135deg, #ff8aac, #fb7299);
+  box-shadow: 0 7px 16px -10px rgba(251, 114, 153, 0.9);
+  color: #2b111b;
+}
+
+.action--primary:hover {
+  background: linear-gradient(135deg, #ff96b4, #fc7fa2);
+}
+
+.action:disabled {
+  cursor: wait;
+  opacity: 0.55;
+  transform: none;
+}
+
+/* Quick links -------------------------------------------------------------- */
+
+.links {
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  margin-top: 9px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--line);
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 7px 12px;
+  text-decoration: none;
+  transition: background 0.16s ease;
+}
+
+.links a:hover {
+  background: #fff;
+}
+
+.links strong,
+.links small {
+  display: block;
+}
+
+.links strong {
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.links small {
+  margin-top: 1px;
+  color: #998e94;
+  font-size: 9px;
+}
+
+.links__arrow {
+  color: #b2a6ac;
+  font-size: 12px;
+  transition: color 0.16s ease, transform 0.16s ease;
+}
+
+.links a:hover .links__arrow {
+  color: var(--pink-deep);
+  transform: translate(1px, -1px);
+}
+
+/* Footer ------------------------------------------------------------------- */
+
+.ai-note {
+  margin: 5px 2px 0;
+  color: #a0959b;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 6px;
+  color: #a0959b;
+  font-size: 9px;
+}
+
+.foot__version {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.04em;
+}

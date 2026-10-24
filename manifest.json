@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "B站只看野兽先生 · MrBeast Only",
+  "short_name": "只看野兽先生",
+  "version": "1.4.1",
+  "description": "把哔哩哔哩首页变成野兽先生 MrBeast 专属频道：隐藏其他推荐视频，只展示官方频道的挑战与疯狂奖金。（AI 辅助制作，可能存在瑕疵）",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt/1+6/7vXrswzs+RnZFypdzovAamTyQ7f/Nng0mGTvInlESRxlLlZ4WgA1jDdCBnSNQdf8Qj5X2acSacKMFmBtFVohPY8pvW+wDJIF3tGw2ieNgoZgSCzrYAo6aS/d4/w/CWl9e/zEw6VOzCXvWLGa0pg4EMF4BXnpoevuOm5LAlxDJsS55L0ntE3yZQX+y9ZJYXQVTaWOD9MabPy8u+zKwwyf+G1o3GIuJwUj1Oyf9JLqRGRbttoB4BaN+UX/8Iyo80iXhylw9tyr1n0u7Q92z6QdJNIy/hj8EdlW6hebjS2ny/ZmlVVsSfl19PoWYi5FhlXZ/qDUkca+7ALldlEQIDAQAB",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "B站只看野兽先生",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "permissions": ["storage", "activeTab", "scripting", "declarativeNetRequestWithHostAccess"],
+  "host_permissions": ["https://*.bilibili.com/*"],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "space-referer",
+        "enabled": true,
+        "path": "rules/space-referer.json"
+      }
+    ]
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/icon128.png"],
+      "matches": ["https://*.bilibili.com/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.bilibili.com/*", "https://bilibili.com/*"],
+      "js": ["content/content.js", "content/search-guard.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://search.bilibili.com/*"],
+      "js": ["content/search-guard.js", "search/search.js"],
+      "css": ["content/content.css", "search/search.css"],
+      "run_at": "document_start"
+    }
+  ]
+}

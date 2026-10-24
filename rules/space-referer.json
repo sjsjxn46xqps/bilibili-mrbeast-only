@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "Referer",
+          "operation": "set",
+          "value": "https://space.bilibili.com/"
+        },
+        {
+          "header": "Origin",
+          "operation": "set",
+          "value": "https://space.bilibili.com"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "||api.bilibili.com/x/space/"
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "Referer",
+          "operation": "set",
+          "value": "https://search.bilibili.com/"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "||api.bilibili.com/x/web-interface/search/"
+    }
+  }
+]

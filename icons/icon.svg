@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="18" y1="10" x2="112" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff9fba"/>
+      <stop offset="0.48" stop-color="#fb7299"/>
+      <stop offset="1" stop-color="#e54876"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="0" cy="0" r="1" gradientTransform="translate(34 24) rotate(47) scale(74)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#7d2140" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="url(#bg)" filter="url(#shadow)"/>
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="url(#shine)"/>
+  <circle cx="103" cy="26" r="10" fill="#ffd76a" opacity="0.95"/>
+  <circle cx="103" cy="26" r="4" fill="#1b1115" opacity="0.8"/>
+  <path d="M29 93V38.5L51.5 66L74 38.5V93" fill="none" stroke="#1b1115" stroke-width="16" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>
